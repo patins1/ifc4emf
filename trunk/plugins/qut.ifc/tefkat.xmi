@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<config:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:config="http://www.dstc.edu.au:8080/qvt/TefkatConfig.ecore">
+  <transformationTasks enabled="true">
+    <transformation locationUri="platform:/resource/qut.ifc/model/express2ecore.qvt"/>
+    <sourceModels locationUri="platform:/resource/qut.express/IFC2X3_Final_Struct.exp"/>
+    <targetModels locationUri="platform:/resource/qut.ifc/model/ifc2x3.ecore"/>
+    <trace locationUri="platform:/resource/qut.ifc/model/trace.xmi"/>
+  </transformationTasks>
+</config:Configuration>

@@ -1,0 +1,12 @@
+#Fri Nov 20 15:10:11 EST 2009
+CLEAR_CONSOLE=false
+JAVACC_OPTIONS=-STATIC\=false
+JJDOC_OPTIONS=
+JJTREE_OPTIONS=-MULTI\=true -VISITOR\=true
+JJ_NATURE=true
+JTB_OPTIONS=-p\=org.ifc4emf.metamodel.express.parser
+RUNTIME_JAR=C\:/Program Files/eclipse-3.5/plugins/sf.eclipse.javacc_1.5.16/javacc.jar
+RUNTIME_JTBJAR=C\:/Program Files/eclipse-3.5/plugins/sf.eclipse.javacc_1.5.16/jtb132.jar
+SHOW_CONSOLE=true
+SUPPRESS_WARNINGS=true
+eclipse.preferences.version=1

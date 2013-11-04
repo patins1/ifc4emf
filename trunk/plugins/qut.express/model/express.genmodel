@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.ifc4emf.metamodel.express/src" editDirectory="/org.ifc4emf.metamodel.express.edit/src"
+    editorDirectory="/org.ifc4emf.metamodel.express.editor/src" modelPluginID="org.ifc4emf.metamodel.express"
+    modelName="Express" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" editPluginID="org.ifc4emf.metamodel.express.edit" editorPluginID="org.ifc4emf.metamodel.express.editor"
+    language="">
+  <foreignModel>express.ecore</foreignModel>
+  <genPackages prefix="Express" basePackage="org.ifc4emf.metamodel" resource="Basic"
+      disposableProviderFactory="true" fileExtensions="exp" ecorePackage="express.ecore#/">
+    <genDataTypes ecoreDataType="express.ecore#//Dummy"/>
+    <nestedGenPackages prefix="Rules" basePackage="org.ifc4emf.metamodel.express"
+        disposableProviderFactory="true" ecorePackage="express.ecore#//rules">
+      <genClasses ecoreClass="express.ecore#//rules/ONEOFConstraint"/>
+      <genClasses ecoreClass="express.ecore#//rules/SupertypeRule">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//rules/SupertypeRule/namedSupertype"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//rules/SupertypeRule/constraints"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//rules/SupertypeRule/assertsAbstract"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//rules/SubtypeConstraint">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//rules/SubtypeConstraint/constrainedSubtypes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//rules/SubtypeConstraint/equivalentRule"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//rules/SubtypeConstraint/collection"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//rules/Extent">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//rules/Extent/constraints"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//rules/Extent/content"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//rules/Extent/withinPopulation"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//rules/Extent/constraintRules"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//rules/Extent/forType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//rules/Extent/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//rules/TOTAL_OVERConstraint"/>
+      <genClasses ecoreClass="express.ecore#//rules/ANDConstraint"/>
+      <genClasses ecoreClass="express.ecore#//rules/GlobalRule">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//rules/GlobalRule/supportingBody"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//rules/GlobalRule/constrainedExtents"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//rules/GlobalRule/containsRules"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//rules/NamedRule">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//rules/NamedRule/assertsExpression"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//rules/NamedRule/position"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Statements" basePackage="org.ifc4emf.metamodel.express"
+        disposableProviderFactory="true" ecorePackage="express.ecore#//statements">
+      <genClasses ecoreClass="express.ecore#//statements/ProcedureCall">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/ProcedureCall/invokes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/ProcedureCall/actualParameters"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/SkipStatement"/>
+      <genClasses ecoreClass="express.ecore#//statements/AliasStatement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/AliasStatement/bindsToReference"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/AliasStatement/body"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/AliasStatement/aliasVariable"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/ControlVariable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/ControlVariable/boundValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/ControlVariable/initialValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/ControlVariable/increment"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/AliasVariable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/AliasVariable/referent"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//statements/ControlStatement"/>
+      <genClasses ecoreClass="express.ecore#//statements/VARCell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/VARCell/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//statements/VARCell/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/NullStatement"/>
+      <genClasses image="false" ecoreClass="express.ecore#//statements/VARExpression">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//statements/VARExpression/text"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/AttributeCell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/AttributeCell/refersTo"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/AttributeCell/baseEntity"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//statements/AttributeCell/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/StatementBlock">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/StatementBlock/bodyStatements_Statement"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//statements/StatementBlock/delimited"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/CaseAction">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/CaseAction/labelValue"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/CaseAction/action"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//statements/CaseAction/isDefault"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/MemberCell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/MemberCell/indexValue"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/MemberCell/baseAggregate"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/RepeatStatement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/RepeatStatement/whileExpression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/RepeatStatement/body"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/RepeatStatement/controlVariable"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/RepeatStatement/untilExpression"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/GroupCell">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/GroupCell/baseEntity"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/GroupCell/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//statements/GroupCell/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/VariableCell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/VariableCell/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//statements/VariableCell/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/CaseStatement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/CaseStatement/cases"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/CaseStatement/selectionExpression"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/IfStatement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/IfStatement/ifCondition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/IfStatement/elseActions"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//statements/IfStatement/thenActions"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/EscapeStatement"/>
+      <genClasses ecoreClass="express.ecore#//statements/ReturnStatement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/ReturnStatement/returnValue"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//statements/Assignment">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/Assignment/assignedValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//statements/Assignment/variable"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Mof" basePackage="org.ifc4emf.metamodel.express" disposableProviderFactory="true"
+        ecorePackage="express.ecore#//mof">
+      <genDataTypes ecoreDataType="express.ecore#//mof/String"/>
+      <genDataTypes ecoreDataType="express.ecore#//mof/Integer"/>
+      <genDataTypes ecoreDataType="express.ecore#//mof/Boolean"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Expressions" basePackage="org.ifc4emf.metamodel.express"
+        disposableProviderFactory="true" ecorePackage="express.ecore#//expressions">
+      <genDataTypes ecoreDataType="express.ecore#//expressions/UnaryOperator"/>
+      <genDataTypes ecoreDataType="express.ecore#//expressions/BinaryOperator"/>
+      <genClasses image="false" ecoreClass="express.ecore#//expressions/Selector">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/Selector/entityInstance"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/RepeatCount">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/RepeatCount/derivation"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/EnumItemRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/EnumItemRef/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/EnumItemRef/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/Literal">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/Literal/refersTo"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/BinaryIndex">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/BinaryIndex/firstBit"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/BinaryIndex/lastBit"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/IndeterminateRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/IndeterminateRef/refersTo"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/SELFRef"/>
+      <genClasses image="false" ecoreClass="express.ecore#//expressions/IndexOperation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/IndexOperation/baseValue"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/BinaryOperation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/BinaryOperation/leftOperand"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/BinaryOperation/rightOperand"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/BinaryOperation/operator"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/AggregateInitializer">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/AggregateInitializer/resultValue"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//expressions/AggregateInitializer/bindings"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/StringIndex">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/StringIndex/firstCode"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/StringIndex/lastCode"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/PartialEntityConstructor">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/PartialEntityConstructor/resultValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/PartialEntityConstructor/attributeGroup"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//expressions/PartialEntityConstructor/bindings"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/PartialEntityConstructor/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/Coercion">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/Coercion/operand"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/Coercion/targetType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//expressions/Primary"/>
+      <genClasses ecoreClass="express.ecore#//expressions/ActualParameter">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//expressions/ActualParameter/inProcedureCall"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//expressions/ActualParameter/inFunctionCall"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/ActualParameter/formalParameter"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/ActualParameter/actualReferent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/ActualParameter/actualValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/ActualParameter/position"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/ParameterRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/ParameterRef/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/ParameterRef/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/AttributeRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/AttributeRef/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/AttributeRef/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/AggregateIndex">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//expressions/AggregateIndex/indexValue"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/GroupRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/GroupRef/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/GroupRef/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/UnaryOperation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/UnaryOperation/unaryOperand"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/UnaryOperation/operator"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/UsedInRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/UsedInRef/inverseOf"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/ConstantRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/ConstantRef/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/ConstantRef/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/QueryExpression">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//expressions/QueryExpression/selectCondition"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/QueryExpression/queryVariable"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/QueryExpression/aggregateOperand"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/QueryVariable"/>
+      <genClasses image="false" ecoreClass="express.ecore#//expressions/Operation"/>
+      <genClasses ecoreClass="express.ecore#//expressions/AttributeBinding">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/AttributeBinding/attributeValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/AttributeBinding/toValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/AttributeBinding/attribute"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/AttributeBinding/position"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/FunctionCall">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//expressions/FunctionCall/actualParameters"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/FunctionCall/invokesFunction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/FunctionCall/returnsResult"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/MemberBinding">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//expressions/MemberBinding/repetition"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/MemberBinding/toSlot"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/MemberBinding/memberValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/MemberBinding/position"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/ExtentRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/ExtentRef/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/ExtentRef/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//expressions/VariableRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//expressions/VariableRef/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//expressions/VariableRef/id"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Core" basePackage="org.ifc4emf.metamodel.express" disposableProviderFactory="true"
+        ecorePackage="express.ecore#//core">
+      <genDataTypes ecoreDataType="express.ecore#//core/Keyword"/>
+      <genDataTypes ecoreDataType="express.ecore#//core/ExpressText"/>
+      <genDataTypes ecoreDataType="express.ecore#//core/Identifier"/>
+      <genDataTypes ecoreDataType="express.ecore#//core/OrderingKind"/>
+      <genClasses image="false" ecoreClass="express.ecore#//core/TypeElement"/>
+      <genClasses ecoreClass="express.ecore#//core/SingleEntityType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SingleEntityType/declaresExplicitAttribute"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/SingleEntityType/declaresAttribute"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SingleEntityType/declaredIn"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SingleEntityType/equivalent"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/SingleEntityType/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/AGGREGATEType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/AGGREGATEType/upperBound"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/AGGREGATEType/memberType"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/AGGREGATEType/constraint"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/AGGREGATEType/lowerBound"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/GeneralBAGType"/>
+      <genClasses ecoreClass="express.ecore#//core/DomainRule">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/DomainRule/position"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/GeneralAggregationType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/GeneralAggregationType/memberType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/ConcreteType"/>
+      <genClasses ecoreClass="express.ecore#//core/Expression">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Expression/evaluation"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Expression/interpretationContext"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Expression/dataType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Expression/text"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/InverseAttribute">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InverseAttribute/modelsRole"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InverseAttribute/explicit"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/InverseAttribute/isUnique"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/EnumerationType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EnumerationType/values"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EnumerationType/declaredItems"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EnumerationType/extension"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EnumerationType/base"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/EnumerationType/isExtensible"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/VariableType"/>
+      <genClasses ecoreClass="express.ecore#//core/ArrayBound">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/ArrayBound/boundExpression"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/ArrayBound/bound"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/GeneralSETType"/>
+      <genClasses ecoreClass="express.ecore#//core/LISTType"/>
+      <genClasses ecoreClass="express.ecore#//core/Redeclaration">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/derivation"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/restrictedType"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/refines"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/upperBound"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/lowerBound"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/scope"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/originalAttribute"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/refinedRole"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Redeclaration/position"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Redeclaration/isMandatory"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/Redeclaration/alias"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/EntityType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/playsRole"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/EntityType/redeclarations"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/attributes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/playsRangeRole"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/declares"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/extension"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/invertibleAttributes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/playsDomainRole"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/uniqueRules"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/usedIn"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/EntityType/subtypeOf"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/EntityType/isAbstract"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/DataType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/DataType/instances"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/PartialEntityType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/PartialEntityType/components"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/Schema">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Schema/documentation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/Schema/interfaces"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/Schema/schemaElements"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Schema/interfacedElements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Schema/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Schema/version"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/InvertibleAttribute">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InvertibleAttribute/inverse"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InvertibleAttribute/rangeType"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InvertibleAttribute/createsRelationship"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InvertibleAttribute/referencingType"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InvertibleAttribute/modelsRole"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/GeneralizedType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/GeneralizedType/occursIn"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/InterfacedElement">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//core/InterfacedElement/interfacingSchema"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InterfacedElement/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/InterfacedElement/isUSE"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/InterfacedElement/interfacedId"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/NumericType"/>
+      <genClasses image="false" ecoreClass="express.ecore#//core/DefinedType"/>
+      <genClasses ecoreClass="express.ecore#//core/UniqueRule">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/UniqueRule/domain"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/UniqueRule/keyComponent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/UniqueRule/position"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/DomainRole">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/DomainRole/rangeView"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/DomainRole/domain"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/DomainRole/id"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/DomainConstraint">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/DomainConstraint/domain"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/DomainConstraint/asserts"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/InstantiableType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/InstantiableType/fundamentalType"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/GeneralLISTType"/>
+      <genClasses image="false" ecoreClass="express.ecore#//core/NamedElement">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//core/NamedElement/namespace"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/NamedElement/documentation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/NamedElement/id"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/Attribute">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Attribute/attributeType"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//core/Attribute/ofEntity"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Attribute/isAbstract"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Attribute/position"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//core/Attribute/owningEntity"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/BAGType"/>
+      <genClasses ecoreClass="express.ecore#//core/RealType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/RealType/precision"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/LogicType"/>
+      <genClasses ecoreClass="express.ecore#//core/GenericType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/GenericType/constraint"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/GenericType/isEntity"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/StringType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/StringType/stringLengthConstraint"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/AnonymousType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/AnonymousType/specializes"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/AlgorithmScope">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/AlgorithmScope/commonElements"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/AlgorithmScope/variables"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/Instance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Instance/appearsInPopulation"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Instance/ofType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/AttributeType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/AttributeType/role"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/AttributeType/constraints"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/DerivedAttribute">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/DerivedAttribute/derivation"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/RangeRole">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/RangeRole/domainView"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/RangeRole/range"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/RangeRole/id"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/LocalElement"/>
+      <genClasses ecoreClass="express.ecore#//core/Remark">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Remark/describesSchema"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Remark/appearsIn"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Remark/describesElement"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Remark/isTagged"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Remark/isTail"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/Remark/text"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/SizeConstraint">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/SizeConstraint/bound"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/Role">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Role/inRelationship"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Role/ofEntity"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Role/upperBound"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Role/lowerBound"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/SETType"/>
+      <genClasses ecoreClass="express.ecore#//core/SpecializedType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SpecializedType/underlyingType"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/GeneralARRAYType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/GeneralARRAYType/hiIndex"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/GeneralARRAYType/loIndex"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/GeneralARRAYType/isOptional"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/Relationship">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Relationship/domain"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Relationship/roles"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Relationship/basedOn"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Relationship/range"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/LengthConstraint">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/LengthConstraint/maxLength"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/LengthConstraint/isFixed"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/LocalScope">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/LocalScope/localElements"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/NamedType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/NamedType/instantiates"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/NamedType/domainRules"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/BinaryType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/BinaryType/binaryLengthConstraint"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/ScopedId">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/ScopedId/localName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/ScopedId/definingScope"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/AggregationType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/AggregationType/lowerBound"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/AggregationType/upperBound"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/AggregationType/isUnique"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/AggregationType/ordering"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/Scope">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/Scope/namedElements"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/Scope/includesRemarks"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/ParameterType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/ParameterType/contains"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/SelectType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SelectType/allowedTypes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SelectType/extension"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SelectType/base"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SelectType/selectList"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/SelectType/isExtensible"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/SelectType/isEntity"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/ActualType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/ActualType/scope"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/ExplicitAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/ExplicitAttribute/isOptional"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/SimpleType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/SimpleType/id"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/CommonElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/CommonElement/localScope"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/SchemaElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SchemaElement/referencedAs"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/SchemaElement/referencedIn"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//core/SchemaElement/definedIn"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//core/ConcreteAggregationType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//core/ConcreteAggregationType/memberType"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//core/ARRAYType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/ARRAYType/loIndex"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//core/ARRAYType/hiIndex"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//core/ARRAYType/isOptional"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Java" basePackage="org.ifc4emf.metamodel.express" disposableProviderFactory="true"
+        ecorePackage="express.ecore#//java">
+      <nestedGenPackages prefix="Lang" basePackage="org.ifc4emf.metamodel.express.java"
+          disposableProviderFactory="true" ecorePackage="express.ecore#//java/lang">
+        <genDataTypes ecoreDataType="express.ecore#//java/lang/int"/>
+        <genDataTypes ecoreDataType="express.ecore#//java/lang/void"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Algorithms" basePackage="org.ifc4emf.metamodel.express"
+        disposableProviderFactory="true" ecorePackage="express.ecore#//algorithms">
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualTypeConstraint">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualTypeConstraint/matchingType"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualTypeConstraint/requiredType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/ActualTypeConstraint/label"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/FunctionResult"/>
+      <genClasses ecoreClass="express.ecore#//algorithms/Function">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/Function/result"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/InParameter">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/InParameter/variable"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/LocalVariable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/LocalVariable/initialValue"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualStructure"/>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualGenericType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualGenericType/refersTo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/ActualGenericType/isEntity"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/ActualGenericType/label"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/Statement">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//algorithms/Statement/inBlock"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/Statement/bodyStatementsSkipStatement"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/Statement/bodyStatementsEscapeStatement"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//algorithms/Statement/controlledBy"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference express.ecore#//algorithms/Statement/implements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/Statement/text"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//algorithms/NamedVariable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/NamedVariable/variableType"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/InVariable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/InVariable/source"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/Procedure"/>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualARRAYType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualARRAYType/hiIndex"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualARRAYType/loIndex"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/ActualARRAYType/isOptional"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualSETType"/>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualAGGREGATEType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualAGGREGATEType/upperBound"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualAGGREGATEType/refersTo"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualAGGREGATEType/memberType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualAGGREGATEType/lowerBound"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/ActualAGGREGATEType/label"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//algorithms/Parameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/Parameter/structureConstraints"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/Parameter/typeConstraints"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/Parameter/formalParameterType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/Parameter/inout"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/Parameter/position"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualStructureConstraint">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualStructureConstraint/matchingStructure"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualStructureConstraint/requiredStructure"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//algorithms/ActualStructureConstraint/label"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//algorithms/Algorithm">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/Algorithm/body"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/Algorithm/formalParameters"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//algorithms/ActualAggregationType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/ActualAggregationType/memberType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//algorithms/VARVariable"/>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualLISTType"/>
+      <genClasses image="false" ecoreClass="express.ecore#//algorithms/Variable"/>
+      <genClasses image="false" ecoreClass="express.ecore#//algorithms/GenericElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//algorithms/GenericElement/source"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//algorithms/GenericElement/label"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//algorithms/VARParameter"/>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualDataType"/>
+      <genClasses ecoreClass="express.ecore#//algorithms/ActualBAGType"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Instances" basePackage="org.ifc4emf.metamodel.express"
+        disposableProviderFactory="true" ecorePackage="express.ecore#//instances">
+      <genDataTypes ecoreDataType="express.ecore#//instances/EntityName"/>
+      <genClasses ecoreClass="express.ecore#//instances/AttributeValue">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/AttributeValue/actualValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/AttributeValue/attribute"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/ARRAYValue">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//instances/ARRAYValue/memberSlot"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/RoleName">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/RoleName/refersTo"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//instances/RoleName/represents"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/EntityInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/EntityInstance/state"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/EntityInstance/instanceOf"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//instances/EntityInstance/id"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/IntegerValue"/>
+      <genClasses image="false" ecoreClass="express.ecore#//instances/AggregateValue"/>
+      <genClasses ecoreClass="express.ecore#//instances/Constant">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/Constant/valueExpression"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/Constant/actualValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/Constant/dataType"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/LogicalValue"/>
+      <genClasses image="false" ecoreClass="express.ecore#//instances/TypedInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/TypedInstance/satisfiesType"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/ListMember">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/ListMember/memberValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//instances/ListMember/position"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/BagMember">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/BagMember/memberValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//instances/BagMember/count"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/SingleEntityValue">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/SingleEntityValue/equivalent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/SingleEntityValue/ofType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//instances/SingleEntityValue/properties"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/Indeterminate"/>
+      <genClasses ecoreClass="express.ecore#//instances/SingleLeafInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/SingleLeafInstance/characterizingType"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/GenericAggregate"/>
+      <genClasses ecoreClass="express.ecore#//instances/BinaryValue"/>
+      <genClasses ecoreClass="express.ecore#//instances/SpecializedValue">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/SpecializedValue/fundamentalValue"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/BAGValue">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//instances/BAGValue/memberSlot"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/EnumerationItem">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/EnumerationItem/declaredIn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//instances/EnumerationItem/position"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/EntityValue">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/EntityValue/correspondsTo"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/EntityValue/describes"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/SETValue">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/SETValue/memberValue"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/ArrayMember">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/ArrayMember/memberValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//instances/ArrayMember/index"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/Population">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/Population/compositionEntityInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/Population/compositionInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/Population/governingSchema"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/RealValue"/>
+      <genClasses ecoreClass="express.ecore#//instances/BooleanValue"/>
+      <genClasses ecoreClass="express.ecore#//instances/LISTValue">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//instances/LISTValue/memberSlot"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/StringValue"/>
+      <genClasses ecoreClass="express.ecore#//instances/TypeName">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference express.ecore#//instances/TypeName/refersTo"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//instances/TypeName/represents"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/PartialEntityValue">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference express.ecore#//instances/PartialEntityValue/components"/>
+      </genClasses>
+      <genClasses ecoreClass="express.ecore#//instances/NumberValue"/>
+      <genClasses ecoreClass="express.ecore#//instances/MultiLeafInstance"/>
+      <genClasses image="false" ecoreClass="express.ecore#//instances/SimpleValue">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute express.ecore#//instances/SimpleValue/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="express.ecore#//instances/ConcreteValue"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

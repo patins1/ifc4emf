@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<config:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:config="http://www.dstc.edu.au:8080/qvt/TefkatConfig.ecore">
+  <transformationTasks enabled="true">
+    <transformation locationUri="platform:/resource/express2ecore/express2ecore.qvt"/>
+    <sourceModels locationUri="platform:/resource/express2ecore/IFC2X3_Final_Struct.exp" varGroup="express"/>
+    <targetModels locationUri="platform:/resource/express2ecore/ifc2x3.ecore" varGroup="ecore"/>
+    <trace locationUri="platform:/resource/express2ecore/trace.xmi"/>
+  </transformationTasks>
+  <transformationTasks>
+    <transformation locationUri="platform:/resource/express2ecore/express2ecore.qvt"/>
+    <sourceModels locationUri="platform:/resource/express2ecore/test.exp"/>
+    <targetModels locationUri="platform:/resource/express2ecore/test.ecore"/>
+    <trace locationUri="platform:/resource/express2ecore/testtrace.xmi"/>
+  </transformationTasks>
+  <transformationTasks>
+    <transformation locationUri="platform:/resource/express2ecore/testselects.qvt"/>
+    <sourceModels locationUri="platform:/resource/express2ecore/testselects.exp" varGroup="express"/>
+    <targetModels locationUri="platform:/resource/express2ecore/blah.ecore" varGroup="ecore"/>
+    <trace locationUri="platform:/resource/express2ecore/tracetestselects.xmi"/>
+  </transformationTasks>
+</config:Configuration>
