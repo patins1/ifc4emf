@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://express.ecore#//rules"
+            class="org.ifc4emf.metamodel.express.rules.RulesPackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://express.ecore#//statements"
+            class="org.ifc4emf.metamodel.express.statements.StatementsPackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://express.ecore#//mof"
+            class="org.ifc4emf.metamodel.express.mof.MofPackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://express.ecore#//expressions"
+            class="org.ifc4emf.metamodel.express.expressions.ExpressionsPackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://express.ecore#//core"
+            class="org.ifc4emf.metamodel.express.core.CorePackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://express.ecore/java/lang"
+            class="org.ifc4emf.metamodel.express.java.lang.LangPackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://express.ecore#//algorithms"
+            class="org.ifc4emf.metamodel.express.algorithms.AlgorithmsPackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://express.ecore#//instances"
+            class="org.ifc4emf.metamodel.express.instances.InstancesPackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated express -->
+      <package
+            uri="http://org.ifc4emf.metamodel.express.ecore/"
+            class="org.ifc4emf.metamodel.express.ExpressPackage"
+            genModel="model/express.genmodel"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="org.ifc4emf.metamodel.express.util.ExpressResourceFactoryImpl"
+            type="exp">
+      </parser>
+   </extension>
+
+</plugin>

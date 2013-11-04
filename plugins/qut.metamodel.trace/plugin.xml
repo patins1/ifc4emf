@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+     <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org.ifc4emf.metamodel.trace.ecore/"
+            class="org.ifc4emf.metamodel.trace.TracePackage">
+      </package>
+   </extension>
+
+</plugin>

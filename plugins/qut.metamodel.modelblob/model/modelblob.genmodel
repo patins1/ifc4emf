@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.ifc4emf.metamodel.modelblob/src" modelPluginID="org.ifc4emf.metamodel.modelblob"
+    modelName="Modelblob" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>modelblob.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Modelblob" basePackage="org.ifc4emf.metamodel" disposableProviderFactory="true"
+      ecorePackage="modelblob.ecore#/">
+    <genClasses ecoreClass="modelblob.ecore#//ContainmentTreeNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelblob.ecore#//ContainmentTreeNode/branch0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelblob.ecore#//ContainmentTreeNode/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelblob.ecore#//ContainmentTreeNode/branch1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelblob.ecore#//ContainmentTreeNode/forwardReferences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelblob.ecore#//ContainmentTreeNode/orderings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelblob.ecore#//ContainmentTreeNode/contentList"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelblob.ecore#//ContainmentTreeNode/virtualContent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="modelblob.ecore#//BinaryTreeRoot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelblob.ecore#//BinaryTreeRoot/depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelblob.ecore#//BinaryTreeRoot/count"/>
+      <genOperations ecoreOperation="modelblob.ecore#//BinaryTreeRoot/resume"/>
+    </genClasses>
+    <genClasses ecoreClass="modelblob.ecore#//ResumableModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelblob.ecore#//ResumableModel/totalWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelblob.ecore#//ResumableModel/worked"/>
+      <genOperations ecoreOperation="modelblob.ecore#//ResumableModel/getCompletionRatio"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

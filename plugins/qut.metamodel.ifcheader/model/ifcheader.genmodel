@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.ifc4emf.metamodel.ifcheader/src" editDirectory="/org.ifc4emf.metamodel.ifcheader.edit/src"
+    editorDirectory="/org.ifc4emf.metamodel.ifcheader.editor/src" modelPluginID="org.ifc4emf.metamodel.ifcheader"
+    modelName="Ifcheader" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
+    complianceLevel="6.0" copyrightFields="false" language="" usedGenPackages="../../org.ifc4emf.metamodel.modelblob/model/modelblob.genmodel#//modelblob">
+  <foreignModel>ifcheader.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Part21" basePackage="org.ifc4emf.metamodel" disposableProviderFactory="true"
+      ecorePackage="ifcheader.ecore#/">
+    <genClasses ecoreClass="ifcheader.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ifcheader.ecore#//Model/contents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ifcheader.ecore#//Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ifcheader.ecore#//Model/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ifcheader.ecore#//Model/schema"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/numIfcObjects"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/numSpaces"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/numSites"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/numBuildingStories"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/numBuildings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/numBuildingElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/numProducts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ifcheader.ecore#//Model/root"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/parsingTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/savingTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//Model/buildModelTime"/>
+    </genClasses>
+    <genClasses ecoreClass="ifcheader.ecore#//ModelName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ifcheader.ecore#//ModelName/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelName/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelName/time_stamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelName/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelName/organization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelName/preprocessor_version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelName/originating_system"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelName/authorization"/>
+    </genClasses>
+    <genClasses ecoreClass="ifcheader.ecore#//ModelDescription">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ifcheader.ecore#//ModelDescription/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelDescription/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelDescription/implementation_level"/>
+    </genClasses>
+    <genClasses ecoreClass="ifcheader.ecore#//ModelSchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ifcheader.ecore#//ModelSchema/schema_identifiers"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ifcheader.ecore#//ModelSchema/model"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
