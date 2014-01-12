@@ -305,13 +305,22 @@ public interface Part21Package extends EPackage {
 	int MODEL__BUILD_MODEL_TIME = ModelblobPackage.BINARY_TREE_ROOT_FEATURE_COUNT + 14;
 
 	/**
+	 * The feature id for the '<em><b>Guid To Part21</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__GUID_TO_PART21 = ModelblobPackage.BINARY_TREE_ROOT_FEATURE_COUNT + 15;
+
+	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FEATURE_COUNT = ModelblobPackage.BINARY_TREE_ROOT_FEATURE_COUNT + 15;
+	int MODEL_FEATURE_COUNT = ModelblobPackage.BINARY_TREE_ROOT_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link org.ifc4emf.metamodel.ifcheader.impl.ModelNameImpl <em>Model Name</em>}' class.
@@ -486,6 +495,73 @@ public interface Part21Package extends EPackage {
 	 * @ordered
 	 */
 	int MODEL_SCHEMA_FEATURE_COUNT = 2;
+
+
+	/**
+	 * The meta object id for the '{@link org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21MapImpl <em>Guid To Part21 Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21MapImpl
+	 * @see org.ifc4emf.metamodel.ifcheader.impl.Part21PackageImpl#getGuidToPart21Map()
+	 * @generated
+	 */
+	int GUID_TO_PART21_MAP = 4;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUID_TO_PART21_MAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUID_TO_PART21_MAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Guid To Part21 Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUID_TO_PART21_MAP_FEATURE_COUNT = 2;
+
+
+	/**
+	 * The meta object id for the '{@link org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21ContainerImpl <em>Guid To Part21 Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21ContainerImpl
+	 * @see org.ifc4emf.metamodel.ifcheader.impl.Part21PackageImpl#getGuidToPart21Container()
+	 * @generated
+	 */
+	int GUID_TO_PART21_CONTAINER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Guid To Part21</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUID_TO_PART21_CONTAINER__GUID_TO_PART21 = 0;
+
+	/**
+	 * The number of structural features of the '<em>Guid To Part21 Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUID_TO_PART21_CONTAINER_FEATURE_COUNT = 1;
 
 
 	/**
@@ -664,6 +740,17 @@ public interface Part21Package extends EPackage {
 	EAttribute getModel_BuildModelTime();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.ifc4emf.metamodel.ifcheader.Model#getGuidToPart21 <em>Guid To Part21</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Guid To Part21</em>'.
+	 * @see org.ifc4emf.metamodel.ifcheader.Model#getGuidToPart21()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_GuidToPart21();
+
+	/**
 	 * Returns the meta object for class '{@link org.ifc4emf.metamodel.ifcheader.ModelName <em>Model Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -837,6 +924,61 @@ public interface Part21Package extends EPackage {
 	EReference getModelSchema_Model();
 
 	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Guid To Part21 Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Guid To Part21 Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyDataType="org.eclipse.emf.ecore.EString"
+	 *        valueDataType="org.eclipse.emf.ecore.EIntegerObject"
+	 * @generated
+	 */
+	EClass getGuidToPart21Map();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getGuidToPart21Map()
+	 * @generated
+	 */
+	EAttribute getGuidToPart21Map_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getGuidToPart21Map()
+	 * @generated
+	 */
+	EAttribute getGuidToPart21Map_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.ifc4emf.metamodel.ifcheader.GuidToPart21Container <em>Guid To Part21 Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Guid To Part21 Container</em>'.
+	 * @see org.ifc4emf.metamodel.ifcheader.GuidToPart21Container
+	 * @generated
+	 */
+	EClass getGuidToPart21Container();
+
+	/**
+	 * Returns the meta object for the map '{@link org.ifc4emf.metamodel.ifcheader.GuidToPart21Container#getGuidToPart21 <em>Guid To Part21</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Guid To Part21</em>'.
+	 * @see org.ifc4emf.metamodel.ifcheader.GuidToPart21Container#getGuidToPart21()
+	 * @see #getGuidToPart21Container()
+	 * @generated
+	 */
+	EReference getGuidToPart21Container_GuidToPart21();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -989,6 +1131,14 @@ public interface Part21Package extends EPackage {
 		EAttribute MODEL__BUILD_MODEL_TIME = eINSTANCE.getModel_BuildModelTime();
 
 		/**
+		 * The meta object literal for the '<em><b>Guid To Part21</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__GUID_TO_PART21 = eINSTANCE.getModel_GuidToPart21();
+
+		/**
 		 * The meta object literal for the '{@link org.ifc4emf.metamodel.ifcheader.impl.ModelNameImpl <em>Model Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1121,6 +1271,50 @@ public interface Part21Package extends EPackage {
 		 * @generated
 		 */
 		EReference MODEL_SCHEMA__MODEL = eINSTANCE.getModelSchema_Model();
+
+		/**
+		 * The meta object literal for the '{@link org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21MapImpl <em>Guid To Part21 Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21MapImpl
+		 * @see org.ifc4emf.metamodel.ifcheader.impl.Part21PackageImpl#getGuidToPart21Map()
+		 * @generated
+		 */
+		EClass GUID_TO_PART21_MAP = eINSTANCE.getGuidToPart21Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GUID_TO_PART21_MAP__KEY = eINSTANCE.getGuidToPart21Map_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GUID_TO_PART21_MAP__VALUE = eINSTANCE.getGuidToPart21Map_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21ContainerImpl <em>Guid To Part21 Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21ContainerImpl
+		 * @see org.ifc4emf.metamodel.ifcheader.impl.Part21PackageImpl#getGuidToPart21Container()
+		 * @generated
+		 */
+		EClass GUID_TO_PART21_CONTAINER = eINSTANCE.getGuidToPart21Container();
+
+		/**
+		 * The meta object literal for the '<em><b>Guid To Part21</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUID_TO_PART21_CONTAINER__GUID_TO_PART21 = eINSTANCE.getGuidToPart21Container_GuidToPart21();
 
 	}
 

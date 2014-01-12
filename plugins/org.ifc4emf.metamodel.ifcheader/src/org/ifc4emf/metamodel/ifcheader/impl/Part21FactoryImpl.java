@@ -6,6 +6,7 @@
  */
 package org.ifc4emf.metamodel.ifcheader.impl;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -61,6 +62,8 @@ public class Part21FactoryImpl extends EFactoryImpl implements Part21Factory {
 			case Part21Package.MODEL_NAME: return (EObject)createModelName();
 			case Part21Package.MODEL_DESCRIPTION: return (EObject)createModelDescription();
 			case Part21Package.MODEL_SCHEMA: return (EObject)createModelSchema();
+			case Part21Package.GUID_TO_PART21_MAP: return (EObject)createGuidToPart21Map();
+			case Part21Package.GUID_TO_PART21_CONTAINER: return (EObject)createGuidToPart21Container();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -104,6 +107,26 @@ public class Part21FactoryImpl extends EFactoryImpl implements Part21Factory {
 	public ModelSchema createModelSchema() {
 		ModelSchemaImpl modelSchema = new ModelSchemaImpl();
 		return modelSchema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, Integer> createGuidToPart21Map() {
+		GuidToPart21MapImpl guidToPart21Map = new GuidToPart21MapImpl();
+		return guidToPart21Map;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GuidToPart21Container createGuidToPart21Container() {
+		GuidToPart21ContainerImpl guidToPart21Container = new GuidToPart21ContainerImpl();
+		return guidToPart21Container;
 	}
 
 	/**
