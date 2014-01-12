@@ -6,6 +6,7 @@
  */
 package org.ifc4emf.metamodel.ifcheader.util;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -98,6 +99,18 @@ public class Part21Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Part21Package.GUID_TO_PART21_MAP: {
+				@SuppressWarnings("unchecked") Map.Entry<String, Integer> guidToPart21Map = (Map.Entry<String, Integer>)theEObject;
+				T result = caseGuidToPart21Map(guidToPart21Map);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Part21Package.GUID_TO_PART21_CONTAINER: {
+				GuidToPart21Container guidToPart21Container = (GuidToPart21Container)theEObject;
+				T result = caseGuidToPart21Container(guidToPart21Container);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -159,6 +172,36 @@ public class Part21Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseModelSchema(ModelSchema object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Guid To Part21 Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Guid To Part21 Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGuidToPart21Map(Map.Entry<String, Integer> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Guid To Part21 Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Guid To Part21 Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGuidToPart21Container(GuidToPart21Container object) {
 		return null;
 	}
 

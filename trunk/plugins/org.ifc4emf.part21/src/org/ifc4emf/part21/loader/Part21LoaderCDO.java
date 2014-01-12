@@ -132,7 +132,7 @@ public class Part21LoaderCDO extends Part21Loader implements ImmediateConsumer {
 		if (unsafedEntities % 1000 == 0 && !isResuming()) {
 			System.out.println("UnsafedEntities=" + unsafedEntities + " Used Memory=" + getMB(usedMemory) + " Max Memory=" + getMB(mm) + " Total Memory=" + getMB(tm) + " Free Memory=" + getMB(fm) + " Free=" + usableMemory / new Double(mm));
 		}
-		return unsafedEntities >= 1000 && (savings == 0 || scarcityIndicator.get() == null/* usableMemory/new Double(mm)<=0.5 */);
+		return unsafedEntities >= 1000 && (savings == 0 || scarcityIndicator.get() == null/* usableMemory/new Double(mm)<=0.5 */) || unsafedEntities >= 10000;
 	}
 
 	private String getMB(long byteCount) {

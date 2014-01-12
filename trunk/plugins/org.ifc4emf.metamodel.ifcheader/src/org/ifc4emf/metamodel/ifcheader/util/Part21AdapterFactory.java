@@ -6,6 +6,7 @@
  */
 package org.ifc4emf.metamodel.ifcheader.util;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -86,6 +87,14 @@ public class Part21AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseModelSchema(ModelSchema object) {
 				return createModelSchemaAdapter();
+			}
+			@Override
+			public Adapter caseGuidToPart21Map(Map.Entry<String, Integer> object) {
+				return createGuidToPart21MapAdapter();
+			}
+			@Override
+			public Adapter caseGuidToPart21Container(GuidToPart21Container object) {
+				return createGuidToPart21ContainerAdapter();
 			}
 			@Override
 			public Adapter caseContainmentTreeNode(ContainmentTreeNode object) {
@@ -172,6 +181,34 @@ public class Part21AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelSchemaAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Guid To Part21 Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createGuidToPart21MapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ifc4emf.metamodel.ifcheader.GuidToPart21Container <em>Guid To Part21 Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ifc4emf.metamodel.ifcheader.GuidToPart21Container
+	 * @generated
+	 */
+	public Adapter createGuidToPart21ContainerAdapter() {
 		return null;
 	}
 

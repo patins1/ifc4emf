@@ -7,8 +7,10 @@
 package org.ifc4emf.metamodel.ifcheader.impl;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.ifc4emf.metamodel.ifcheader.GuidToPart21Container;
 import org.ifc4emf.metamodel.ifcheader.Model;
 import org.ifc4emf.metamodel.ifcheader.ModelDescription;
 import org.ifc4emf.metamodel.ifcheader.ModelName;
@@ -38,6 +40,7 @@ import org.ifc4emf.metamodel.modelblob.impl.BinaryTreeRootImpl;
  *   <li>{@link org.ifc4emf.metamodel.ifcheader.impl.ModelImpl#getParsingTime <em>Parsing Time</em>}</li>
  *   <li>{@link org.ifc4emf.metamodel.ifcheader.impl.ModelImpl#getSavingTime <em>Saving Time</em>}</li>
  *   <li>{@link org.ifc4emf.metamodel.ifcheader.impl.ModelImpl#getBuildModelTime <em>Build Model Time</em>}</li>
+ *   <li>{@link org.ifc4emf.metamodel.ifcheader.impl.ModelImpl#getGuidToPart21 <em>Guid To Part21</em>}</li>
  * </ul>
  * </p>
  *
@@ -323,6 +326,25 @@ public class ModelImpl extends BinaryTreeRootImpl implements Model {
 	 */
 	public void setBuildModelTime(long newBuildModelTime) {
 		eSet(Part21Package.Literals.MODEL__BUILD_MODEL_TIME, newBuildModelTime);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public GuidToPart21Container getGuidToPart21() {
+		return (GuidToPart21Container)eGet(Part21Package.Literals.MODEL__GUID_TO_PART21, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGuidToPart21(GuidToPart21Container newGuidToPart21) {
+		eSet(Part21Package.Literals.MODEL__GUID_TO_PART21, newGuidToPart21);
 	}
 
 } //ModelImpl

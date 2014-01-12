@@ -1031,7 +1031,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 			// Now descend and do the parameter list
 			visitParameterList(node, eObj);
 			flushRefList(eObj);
-			this.helper.addedObject(modelObject, eObj);
+			this.helper.addedObject(modelObject, eObj, currentEntityId);
 
 		} catch (NoSuchClassException ex) {
 			logger.severe("Can't find a class for " + typeName);

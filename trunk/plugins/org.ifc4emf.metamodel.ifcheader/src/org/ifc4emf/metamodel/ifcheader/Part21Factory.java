@@ -62,6 +62,15 @@ public interface Part21Factory extends EFactory {
 	ModelSchema createModelSchema();
 
 	/**
+	 * Returns a new object of class '<em>Guid To Part21 Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Guid To Part21 Container</em>'.
+	 * @generated
+	 */
+	GuidToPart21Container createGuidToPart21Container();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

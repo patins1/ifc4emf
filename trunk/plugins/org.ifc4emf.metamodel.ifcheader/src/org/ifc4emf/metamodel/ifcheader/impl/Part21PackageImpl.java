@@ -6,11 +6,13 @@
  */
 package org.ifc4emf.metamodel.ifcheader.impl;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.ifc4emf.metamodel.ifcheader.GuidToPart21Container;
 import org.ifc4emf.metamodel.ifcheader.Model;
 import org.ifc4emf.metamodel.ifcheader.ModelDescription;
 import org.ifc4emf.metamodel.ifcheader.ModelName;
@@ -53,6 +55,20 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 	 * @generated
 	 */
 	private EClass modelSchemaEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass guidToPart21MapEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass guidToPart21ContainerEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -267,6 +283,15 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getModel_GuidToPart21() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getModelName() {
 		return modelNameEClass;
 	}
@@ -411,6 +436,51 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getGuidToPart21Map() {
+		return guidToPart21MapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuidToPart21Map_Key() {
+		return (EAttribute)guidToPart21MapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuidToPart21Map_Value() {
+		return (EAttribute)guidToPart21MapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGuidToPart21Container() {
+		return guidToPart21ContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGuidToPart21Container_GuidToPart21() {
+		return (EReference)guidToPart21ContainerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Part21Factory getPart21Factory() {
 		return (Part21Factory)getEFactoryInstance();
 	}
@@ -450,6 +520,7 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 		createEAttribute(modelEClass, MODEL__PARSING_TIME);
 		createEAttribute(modelEClass, MODEL__SAVING_TIME);
 		createEAttribute(modelEClass, MODEL__BUILD_MODEL_TIME);
+		createEReference(modelEClass, MODEL__GUID_TO_PART21);
 
 		modelNameEClass = createEClass(MODEL_NAME);
 		createEReference(modelNameEClass, MODEL_NAME__MODEL);
@@ -469,6 +540,13 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 		modelSchemaEClass = createEClass(MODEL_SCHEMA);
 		createEAttribute(modelSchemaEClass, MODEL_SCHEMA__SCHEMA_IDENTIFIERS);
 		createEReference(modelSchemaEClass, MODEL_SCHEMA__MODEL);
+
+		guidToPart21MapEClass = createEClass(GUID_TO_PART21_MAP);
+		createEAttribute(guidToPart21MapEClass, GUID_TO_PART21_MAP__KEY);
+		createEAttribute(guidToPart21MapEClass, GUID_TO_PART21_MAP__VALUE);
+
+		guidToPart21ContainerEClass = createEClass(GUID_TO_PART21_CONTAINER);
+		createEReference(guidToPart21ContainerEClass, GUID_TO_PART21_CONTAINER__GUID_TO_PART21);
 	}
 
 	/**
@@ -521,6 +599,7 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 		initEAttribute(getModel_ParsingTime(), ecorePackage.getELong(), "parsingTime", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModel_SavingTime(), ecorePackage.getELong(), "savingTime", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModel_BuildModelTime(), ecorePackage.getELong(), "buildModelTime", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_GuidToPart21(), this.getGuidToPart21Container(), null, "guidToPart21", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelNameEClass, ModelName.class, "ModelName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelName_Model(), this.getModel(), this.getModel_Name(), "model", null, 1, 1, ModelName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -540,6 +619,13 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 		initEClass(modelSchemaEClass, ModelSchema.class, "ModelSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getModelSchema_Schema_identifiers(), ecorePackage.getEString(), "schema_identifiers", null, 1, -1, ModelSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelSchema_Model(), this.getModel(), this.getModel_Schema(), "model", null, 1, 1, ModelSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(guidToPart21MapEClass, Map.Entry.class, "GuidToPart21Map", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGuidToPart21Map_Key(), ecorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuidToPart21Map_Value(), ecorePackage.getEIntegerObject(), "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(guidToPart21ContainerEClass, GuidToPart21Container.class, "GuidToPart21Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGuidToPart21Container_GuidToPart21(), this.getGuidToPart21Map(), null, "guidToPart21", null, 0, -1, GuidToPart21Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

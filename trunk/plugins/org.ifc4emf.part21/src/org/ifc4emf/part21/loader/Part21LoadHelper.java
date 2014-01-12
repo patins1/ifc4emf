@@ -59,6 +59,6 @@ public interface Part21LoadHelper {
 
 	public boolean isEntitySelect(String typeName);
 
-	public void addedObject(Model model, EObject ifcObject);
+	public void addedObject(Model model, EObject ifcObject, int index);
 
 }

@@ -7,6 +7,7 @@
 package org.ifc4emf.metamodel.ifcheader;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
 import org.ifc4emf.metamodel.modelblob.BinaryTreeRoot;
 
@@ -33,6 +34,7 @@ import org.ifc4emf.metamodel.modelblob.BinaryTreeRoot;
  *   <li>{@link org.ifc4emf.metamodel.ifcheader.Model#getParsingTime <em>Parsing Time</em>}</li>
  *   <li>{@link org.ifc4emf.metamodel.ifcheader.Model#getSavingTime <em>Saving Time</em>}</li>
  *   <li>{@link org.ifc4emf.metamodel.ifcheader.Model#getBuildModelTime <em>Build Model Time</em>}</li>
+ *   <li>{@link org.ifc4emf.metamodel.ifcheader.Model#getGuidToPart21 <em>Guid To Part21</em>}</li>
  * </ul>
  * </p>
  *
@@ -426,5 +428,31 @@ public interface Model extends BinaryTreeRoot {
 	 * @generated
 	 */
 	void setBuildModelTime(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Guid To Part21</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Guid To Part21</em>' map isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Guid To Part21</em>' containment reference.
+	 * @see #setGuidToPart21(GuidToPart21Container)
+	 * @see org.ifc4emf.metamodel.ifcheader.Part21Package#getModel_GuidToPart21()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GuidToPart21Container getGuidToPart21();
+
+	/**
+	 * Sets the value of the '{@link org.ifc4emf.metamodel.ifcheader.Model#getGuidToPart21 <em>Guid To Part21</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Guid To Part21</em>' containment reference.
+	 * @see #getGuidToPart21()
+	 * @generated
+	 */
+	void setGuidToPart21(GuidToPart21Container value);
 
 } // Model
