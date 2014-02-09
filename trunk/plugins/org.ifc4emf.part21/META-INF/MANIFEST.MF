@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Part21
 Bundle-SymbolicName: org.ifc4emf.part21;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.ifc4emf.part21.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,

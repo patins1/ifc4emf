@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.cdo.eresource.CDOResource;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.ifc4emf.metamodel.ifcheader.Model;
+import org.ifc4emf.part21.Activator;
 import org.ifc4emf.part21.parser.ASTentity_instance;
 import org.ifc4emf.part21.parser.Node;
 
@@ -99,8 +100,8 @@ public class Part21LoaderCDO extends Part21Loader implements ImmediateConsumer {
 					long finished = new Date().getTime();
 					this.modelObject.setParsingTime(this.modelObject.getParsingTime() + (finished - startedAfterSaving));
 
-					System.out.println("Saving at " + done + "% #dirty=" + unsafedEntities + " %dirty=" + (done - doneAndSaved) + " new forwards=" + (forwardReferences - prevForwardReferences) + " resolved forwards=" + (resolvedForwardReferences - prevResolvedForwardReferences) + " remaining forwards="
-							+ getRemainingForwardReferences() + " total forwards=" + forwardReferences + " total backward references=" + backwardReferences + " time:" + (finished - started) + " time/element:" + (finished - started) / new Double(unsafedEntities));
+					Activator.log("Saving at " + done + "% #dirty=" + unsafedEntities + " %dirty=" + (done - doneAndSaved) + " new forwards=" + (forwardReferences - prevForwardReferences) + " resolved forwards=" + (resolvedForwardReferences - prevResolvedForwardReferences) + " remaining forwards=" + getRemainingForwardReferences()
+							+ " total forwards=" + forwardReferences + " total backward references=" + backwardReferences + " time:" + (finished - started) + " time/element:" + (finished - started) / new Double(unsafedEntities));
 					save(resource);
 					monitor.subTask("Parsing");
 					started = finished;
@@ -130,7 +131,7 @@ public class Part21LoaderCDO extends Part21Loader implements ImmediateConsumer {
 		long usedMemory = tm - fm;
 		long usableMemory = mm - usedMemory;
 		if (unsafedEntities % 1000 == 0 && !isResuming()) {
-			System.out.println("UnsafedEntities=" + unsafedEntities + " Used Memory=" + getMB(usedMemory) + " Max Memory=" + getMB(mm) + " Total Memory=" + getMB(tm) + " Free Memory=" + getMB(fm) + " Free=" + usableMemory / new Double(mm));
+			Activator.log("UnsafedEntities=" + unsafedEntities + " Used Memory=" + getMB(usedMemory) + " Max Memory=" + getMB(mm) + " Total Memory=" + getMB(tm) + " Free Memory=" + getMB(fm) + " Free=" + usableMemory / new Double(mm));
 		}
 		return unsafedEntities >= 1000 && (savings == 0 || scarcityIndicator.get() == null/* usableMemory/new Double(mm)<=0.5 */) || unsafedEntities >= 10000;
 	}

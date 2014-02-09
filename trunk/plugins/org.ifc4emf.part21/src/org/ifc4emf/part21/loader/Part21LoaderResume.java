@@ -16,6 +16,7 @@ import java.io.InputStream;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.ifc4emf.metamodel.ifcheader.Model;
+import org.ifc4emf.part21.Activator;
 import org.ifc4emf.part21.parser.ASTentity_instance;
 import org.ifc4emf.part21.parser.ASTsyntax;
 import org.ifc4emf.part21.parser.Node;
@@ -45,7 +46,7 @@ public class Part21LoaderResume extends Part21Loader implements ImmediateConsume
 	@Override
 	public void load(ASTsyntax syntax) throws IOException {
 		// do nothing
-		System.out.println("Parsed " + parserCount + " objects");
+		Activator.log("Parsed " + parserCount + " objects");
 	}
 
 }

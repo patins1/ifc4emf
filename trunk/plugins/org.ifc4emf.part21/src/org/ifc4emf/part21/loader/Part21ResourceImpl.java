@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.ifc4emf.metamodel.ifcheader.Model;
 import org.ifc4emf.metamodel.ifcheader.Part21Factory;
 import org.ifc4emf.metamodel.modelblob.util.ResumableResourceUtil;
+import org.ifc4emf.part21.Activator;
 import org.ifc4emf.part21.parser.ASTsyntax;
 import org.ifc4emf.part21.parser.ClearTextReader;
 import org.ifc4emf.part21.parser.ParseException;
@@ -78,7 +79,7 @@ abstract public class Part21ResourceImpl extends ResourceImpl {
 			monitor.beginTask(taskName, 1000);
 			monitor = SubMonitor.convert(monitor, 1000); // RAP can't handle large initialAvailable, so scale it down to 1000
 			monitor.beginTask(taskName, initialAvailable);
-			System.out.println("IFC model size:" + inputStream.available());
+			Activator.log("IFC model size:" + inputStream.available());
 			loader = new Part21LoaderCDO(this, helper, inputStream, ifcModel, monitor);
 			loader.setMVD((Set<EClass>) options.get(OPTION_MVD));
 		}
@@ -88,11 +89,11 @@ abstract public class Part21ResourceImpl extends ResourceImpl {
 			long started = new Date().getTime();
 			ASTsyntax syntax = parser.syntax();
 			long ended = new Date().getTime();
-			System.out.println("Parsing IFC file took " + (ended - started));
+			Activator.log("Parsing IFC file took " + (ended - started));
 			started = new Date().getTime();
 			loader.load(syntax);
 			ended = new Date().getTime();
-			System.out.println("Building IFC EMF model took " + (ended - started));
+			Activator.log("Building IFC EMF model took " + (ended - started));
 		} catch (ParseException e) {
 			if (!resumeOnly)
 				throw new RuntimeException(e);
