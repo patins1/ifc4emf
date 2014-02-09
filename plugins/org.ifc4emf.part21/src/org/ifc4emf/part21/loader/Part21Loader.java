@@ -54,6 +54,7 @@ import org.ifc4emf.metamodel.ifcheader.ModelDescription;
 import org.ifc4emf.metamodel.ifcheader.ModelName;
 import org.ifc4emf.metamodel.ifcheader.ModelSchema;
 import org.ifc4emf.metamodel.ifcheader.Part21Factory;
+import org.ifc4emf.part21.Activator;
 import org.ifc4emf.part21.parser.ASTdata_section;
 import org.ifc4emf.part21.parser.ASTentity_instance;
 import org.ifc4emf.part21.parser.ASTentity_instance_list;
@@ -99,7 +100,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 
 		@Override
 		public void publish(LogRecord record) {
-			System.out.println(record.getMessage());
+			Activator.log(record.getMessage());
 		}
 
 		@Override
@@ -143,11 +144,11 @@ public class Part21Loader implements ClearTextReaderVisitor {
 	// //loader.load(syntax);
 	//
 	// // } catch (FileNotFoundException e) {
-	// // e.printStackTrace();
+	// // Activator.err(e);
 	// // } catch (ParseException e) {
-	// // e.printStackTrace();
+	// // Activator.err(e);
 	// // } catch (IOException e) {
-	// // e.printStackTrace();
+	// // Activator.err(e);
 	// // }
 	// }
 
@@ -160,7 +161,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 			return;
 		currentEntityId = -1;
 		int lastObj = -1;
-		System.out.println("Final linking");
+		Activator.log("Final linking");
 		Iterator<LinkageTuple> it = forwardReferenceHelper.linkObjects();
 		while (it.hasNext()) {
 			LinkageTuple tuple = it.next();
@@ -172,7 +173,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 		}
 		if (getRemainingForwardReferences() > 0)
 			if (whiteList != null)
-				System.out.println("There are " + getRemainingForwardReferences() + " forward references unresolved due to MVD parsing.");
+				Activator.log("There are " + getRemainingForwardReferences() + " forward references unresolved due to MVD parsing.");
 			else
 				throw new RuntimeException("There are still " + getRemainingForwardReferences() + " forward references!");
 		work(true);
@@ -199,7 +200,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 			try {
 				forwardReferenceHelper.orderReferences(eobj, ref);
 			} catch (IndexOutOfBoundsException ioob) {
-				System.err.println("Could not apply ordering for reference " + ref.eClass().getName() + "." + ref.getName() + " in line #" + currentEntityId + ": " + ioob.getMessage());
+				Activator.err("Could not apply ordering for reference " + ref.eClass().getName() + "." + ref.getName() + " in line #" + currentEntityId + ": " + ioob.getMessage());
 			}
 		}
 		resolvedForwardReferences++;
@@ -216,7 +217,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 			try {
 				processNonEntity(eobj, eCls.getName().toUpperCase(), ref, eCls, target.eClass().getName().toUpperCase(), target);
 			} catch (NoSuchClassException e) {
-				e.printStackTrace();
+				Activator.err(e);
 			}
 		} else {
 			checkAssignmentSanity(ref, target);
@@ -235,13 +236,13 @@ public class Part21Loader implements ClearTextReaderVisitor {
 			if (oppTarget != null && !(oppTarget instanceof List)) {
 				String s = oppositeRef.getEContainingClass().getName() + "." + oppositeRef.getName() + " should be multivalued, otherwise it will be assigned multiple times!";
 				// throw new RuntimeException(s);
-				System.err.println(s);
+				Activator.err(s);
 			}
 		}
 		if (ref.isContainment() && target.eContainer() != null) {
 			String s = ref.getEContainingClass().getName() + "." + ref.getName() + " should be non-containment, since the object to be referenced is already contained by " + target.eContainer().eClass().getName() + "." + target.eContainingFeature().getName() + "!";
 			// throw new RuntimeException(s);
-			System.err.println(s);
+			Activator.err(s);
 		}
 	}
 
@@ -449,9 +450,9 @@ public class Part21Loader implements ClearTextReaderVisitor {
 					processAttributeValue(eobj, express_attribute, attrValue);
 				}
 			} catch (NoSuchAttributeException e) {
-				e.printStackTrace();
+				Activator.err(e);
 			} catch (NoSuchClassException e) {
-				e.printStackTrace();
+				Activator.err(e);
 			}
 		}
 

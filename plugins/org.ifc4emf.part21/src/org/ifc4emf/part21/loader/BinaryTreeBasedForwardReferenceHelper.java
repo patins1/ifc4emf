@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.ifc4emf.metamodel.modelblob.ContainmentTreeNode;
+import org.ifc4emf.part21.Activator;
 
 public class BinaryTreeBasedForwardReferenceHelper implements IForwardReferenceHelper {
 
@@ -64,16 +65,16 @@ public class BinaryTreeBasedForwardReferenceHelper implements IForwardReferenceH
 							EClassifier type = ref.getEType();
 							if (aSubclass.get(type) != null) {
 								other++;
-								// System.err.println("Error, cannot manage forward references for "+ref.getName()+":"+type.getName()+","+aSubclass.get(type).getName());
+								// Activator.err("Error, cannot manage forward references for "+ref.getName()+":"+type.getName()+","+aSubclass.get(type).getName());
 							} else {
 								directInstantiationReferences.add(ref);
-								// System.out.println("Error, cannot manage forward references for "+ref.getName()+":"+type.getName());
+								// Activator.log("Error, cannot manage forward references for "+ref.getName()+":"+type.getName());
 							}
 						}
 					}
 				}
 			}
-			System.out.println("Direct instantiation references: " + directInstantiationReferences.size() + " other: " + other);
+			Activator.log("Direct instantiation references: " + directInstantiationReferences.size() + " other: " + other);
 		}
 	}
 

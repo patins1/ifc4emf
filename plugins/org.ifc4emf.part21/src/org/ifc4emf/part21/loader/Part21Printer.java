@@ -18,7 +18,6 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -48,6 +47,7 @@ import org.ifc4emf.metamodel.ifcheader.Model;
 import org.ifc4emf.metamodel.ifcheader.ModelDescription;
 import org.ifc4emf.metamodel.ifcheader.ModelName;
 import org.ifc4emf.metamodel.ifcheader.ModelSchema;
+import org.ifc4emf.part21.Activator;
 
 public class Part21Printer {
 
@@ -139,7 +139,7 @@ public class Part21Printer {
 		long ended = new Date().getTime();
 		if (!monitor.isCanceled())
 			worked(true);
-		System.out.println("Forward references=" + forwardReferences + " Backward references=" + backwardReferences + " time:" + (ended - initialStarted));
+		Activator.log("Forward references=" + forwardReferences + " Backward references=" + backwardReferences + " time:" + (ended - initialStarted));
 	}
 
 	private void worked(boolean workIsFinished) {
@@ -154,7 +154,7 @@ public class Part21Printer {
 				if (unsafedEntities >= Part21LoaderCDO.MODEL_WINDOW || workIsFinished) {
 					double done = getPercentageDone();
 					long finished = new Date().getTime();
-					System.out.println("Printing at " + done + "% #dirty=" + unsafedEntities + " %dirty=" + (done - doneAndSaved) + " new forwards=" + (forwardReferences - prevForwardReferences) + " resolved forwards=" + (resolvedForwardReferences - prevResolvedForwardReferences) + " remaining forwards="
+					Activator.log("Printing at " + done + "% #dirty=" + unsafedEntities + " %dirty=" + (done - doneAndSaved) + " new forwards=" + (forwardReferences - prevForwardReferences) + " resolved forwards=" + (resolvedForwardReferences - prevResolvedForwardReferences) + " remaining forwards="
 							+ getRemainingForwardReferences() + " total forwards=" + forwardReferences + " total backward references=" + backwardReferences + " time:" + (finished - started) + " time/element:" + (finished - started) / new Double(unsafedEntities));
 					started = finished;
 					if (workIsFinished) {
@@ -303,11 +303,9 @@ public class Part21Printer {
 					Object featureVal = eobj.eGet(eFeature);
 					printAttrVal(writer, entityType, expAttr, expAttr.getAttributeType(), featureVal, eobj, eFeature);
 				} catch (NoSuchClassException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					Activator.err(e);
 				} catch (NoSuchAttributeException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					Activator.err(e);
 				}
 			}
 		} catch (NoSuchClassException e) {
