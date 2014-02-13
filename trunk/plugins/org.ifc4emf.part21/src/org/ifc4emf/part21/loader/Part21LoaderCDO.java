@@ -77,8 +77,10 @@ public class Part21LoaderCDO extends Part21Loader implements ImmediateConsumer {
 				this.modelObject.setBuildModelTime(this.modelObject.getBuildModelTime() + (afterModelling - beforeModelling));
 			} else {
 				parserCount++;
-				if (!isResuming())
+				if (!isResuming()) {
 					monitor.subTask("Parsing");
+					startedAfterSaving = new Date().getTime();
+				}
 			}
 			work(false);
 			return true;
