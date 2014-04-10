@@ -471,8 +471,8 @@ public class Part21Loader implements ClearTextReaderVisitor {
 			}
 			return;
 		} else if (attrValue instanceof Collection<?>) { // If its a collection, unwrap the values and treat them individually
-			if (!(aType instanceof AggregationType)) {
-				logger.severe("Found collection value for non-aggregation-typed attribute" + expressAttribute.getId().getLocalName());
+			if (!(aType instanceof AggregationType) && !(aType instanceof SpecializedType && ((SpecializedType) aType).getUnderlyingType() instanceof AggregationType)) {
+				logger.severe("Found collection value for non-aggregation-typed attribute " + expressAttribute.getId().getLocalName());
 			}
 			Collection<Object> coll = (Collection<Object>) attrValue;
 			for (Object obj : coll) {
