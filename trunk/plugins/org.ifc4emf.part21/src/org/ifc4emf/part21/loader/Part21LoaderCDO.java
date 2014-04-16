@@ -17,6 +17,7 @@ import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.cdo.eresource.CDOResource;
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.ifc4emf.metamodel.ifcheader.Model;
 import org.ifc4emf.part21.Activator;
 import org.ifc4emf.part21.parser.ASTentity_instance;
+import org.ifc4emf.part21.parser.ASTheader_entity;
 import org.ifc4emf.part21.parser.Node;
 
 public class Part21LoaderCDO extends Part21Loader implements ImmediateConsumer {
@@ -42,6 +44,7 @@ public class Part21LoaderCDO extends Part21Loader implements ImmediateConsumer {
 	private int prevBytesProcessed;
 	private int savings;
 	private Reference<Object> scarcityIndicator;
+	private int headerEntityCount = 0;
 
 	public Part21LoaderCDO(Resource resource, Part21LoadHelper helper, InputStream inputStream, Model ifcModel, IProgressMonitor monitor) throws IOException {
 		super(resource, helper, ifcModel);
@@ -67,6 +70,28 @@ public class Part21LoaderCDO extends Part21Loader implements ImmediateConsumer {
 
 	@Override
 	public boolean consume(Node node) {
+		if (node instanceof ASTheader_entity) {
+
+			headerEntityCount++;
+
+			if (headerEntityCount != 3)
+				return false;
+
+			Object schema_identifiers = node.jjtGetNumChildren() >= 1 ? node.jjtGetChild(0).jjtAccept(this, null) : null;
+
+			String id = "(undefined)";
+			boolean containsIFC2X3 = false;
+			if (schema_identifiers instanceof List) {
+				for (Object oid : (List) schema_identifiers) {
+					if (oid instanceof String) {
+						id = (String) oid;
+						containsIFC2X3 |= id.toUpperCase().contains("IFC2X3");
+					}
+				}
+			}
+			if (!containsIFC2X3)
+				throw new RuntimeException("IFC version " + id + " not supported!");
+		}
 		if (node instanceof ASTentity_instance) {
 			if (!isResuming()) {
 				parserCount++;

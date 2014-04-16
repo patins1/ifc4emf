@@ -98,7 +98,9 @@ abstract public class Part21ResourceImpl extends ResourceImpl {
 			if (!resumeOnly)
 				throw new RuntimeException(e);
 		} catch (RuntimeException re) {
-			throw new RuntimeException("Got exception while parsing #" + loader.currentEntityId, re);
+			if (loader.currentEntityId != -1)
+				throw new RuntimeException("Got exception while parsing #" + loader.currentEntityId, re);
+			throw re;
 		}
 
 	}
