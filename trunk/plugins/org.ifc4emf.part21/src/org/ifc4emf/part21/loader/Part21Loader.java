@@ -86,8 +86,6 @@ public class Part21Loader implements ClearTextReaderVisitor {
 
 	protected IProgressMonitor monitor;
 
-	public static final boolean USE_CONTAINMENT_TREE = true;
-
 	public static boolean ALWAYS_PRESEVER_ORDERING = true;
 
 	final protected Model modelObject;
@@ -274,7 +272,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 		logger.setLevel(Level.WARNING);
 		// logger.addHandler(LOGHANDLER);
 		this.factory = helper.getFactory();
-		if (Part21Loader.USE_CONTAINMENT_TREE) {
+		if (Part21Loader.useContainmentTree()) {
 			this.containmentHelper = new ContainmentTreeOrderedByNumberHelper(modelObject);
 			this.forwardReferenceHelper = new BinaryTreeBasedForwardReferenceHelper((ContainmentTreeHelper) this.containmentHelper, helper);
 			// this.forwardReferenceHelper = new ComposedForwardReferenceHelper(new BinaryTreeBasedForwardReferenceHelper((ContainmentTreeHelper) this.containmentHelper));
@@ -1087,6 +1085,10 @@ public class Part21Loader implements ClearTextReaderVisitor {
 			if (whiteListWithSupertypes.add(eClass))
 				whiteListWithSupertypes.addAll(eClass.getEAllSuperTypes());
 		}
+	}
+
+	public static final boolean useContainmentTree() {
+		return true;
 	}
 
 }
