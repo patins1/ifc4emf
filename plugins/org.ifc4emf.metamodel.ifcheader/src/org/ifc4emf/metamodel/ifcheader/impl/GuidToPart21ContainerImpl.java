@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
 import org.ifc4emf.metamodel.ifcheader.GuidToPart21Container;
@@ -60,8 +61,8 @@ public class GuidToPart21ContainerImpl extends CDOObjectImpl implements GuidToPa
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EMap<String, Integer> getGuidToPart21() {
-		return (EMap<String, Integer>)eGet(Part21Package.Literals.GUID_TO_PART21_CONTAINER__GUID_TO_PART21, true);
+	public EMap<String, EObject> getGuidToPart21() {
+		return (EMap<String, EObject>)eGet(Part21Package.Literals.GUID_TO_PART21_CONTAINER__GUID_TO_PART21, true);
 	}
 
 } //GuidToPart21ContainerImpl

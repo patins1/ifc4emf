@@ -114,7 +114,7 @@ public class Part21FactoryImpl extends EFactoryImpl implements Part21Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<String, Integer> createGuidToPart21Map() {
+	public Map.Entry<String, EObject> createGuidToPart21Map() {
 		GuidToPart21MapImpl guidToPart21Map = new GuidToPart21MapImpl();
 		return guidToPart21Map;
 	}

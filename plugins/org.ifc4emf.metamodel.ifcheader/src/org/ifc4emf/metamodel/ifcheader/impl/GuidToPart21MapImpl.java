@@ -26,7 +26,7 @@ import org.ifc4emf.metamodel.ifcheader.Part21Package;
  *
  * @generated
  */
-public class GuidToPart21MapImpl extends CDOObjectImpl implements BasicEMap.Entry<String,Integer> {
+public class GuidToPart21MapImpl extends CDOObjectImpl implements BasicEMap.Entry<String,EObject> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -79,8 +79,8 @@ public class GuidToPart21MapImpl extends CDOObjectImpl implements BasicEMap.Entr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getTypedValue() {
-		return (Integer)eGet(Part21Package.Literals.GUID_TO_PART21_MAP__VALUE, true);
+	public EObject getTypedValue() {
+		return (EObject)eGet(Part21Package.Literals.GUID_TO_PART21_MAP__VALUE, true);
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class GuidToPart21MapImpl extends CDOObjectImpl implements BasicEMap.Entr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypedValue(Integer newValue) {
+	public void setTypedValue(EObject newValue) {
 		eSet(Part21Package.Literals.GUID_TO_PART21_MAP__VALUE, newValue);
 	}
 
@@ -144,7 +144,7 @@ public class GuidToPart21MapImpl extends CDOObjectImpl implements BasicEMap.Entr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getValue() {
+	public EObject getValue() {
 		return getTypedValue();
 	}
 
@@ -153,8 +153,8 @@ public class GuidToPart21MapImpl extends CDOObjectImpl implements BasicEMap.Entr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer setValue(Integer value) {
-		Integer oldValue = getValue();
+	public EObject setValue(EObject value) {
+		EObject oldValue = getValue();
 		setTypedValue(value);
 		return oldValue;
 	}
@@ -165,9 +165,9 @@ public class GuidToPart21MapImpl extends CDOObjectImpl implements BasicEMap.Entr
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EMap<String, Integer> getEMap() {
+	public EMap<String, EObject> getEMap() {
 		EObject container = eContainer();
-		return container == null ? null : (EMap<String, Integer>)container.eGet(eContainmentFeature());
+		return container == null ? null : (EMap<String, EObject>)container.eGet(eContainmentFeature());
 	}
 
 } //GuidToPart21MapImpl

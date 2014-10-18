@@ -454,8 +454,8 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGuidToPart21Map_Value() {
-		return (EAttribute)guidToPart21MapEClass.getEStructuralFeatures().get(1);
+	public EReference getGuidToPart21Map_Value() {
+		return (EReference)guidToPart21MapEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -543,7 +543,7 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 
 		guidToPart21MapEClass = createEClass(GUID_TO_PART21_MAP);
 		createEAttribute(guidToPart21MapEClass, GUID_TO_PART21_MAP__KEY);
-		createEAttribute(guidToPart21MapEClass, GUID_TO_PART21_MAP__VALUE);
+		createEReference(guidToPart21MapEClass, GUID_TO_PART21_MAP__VALUE);
 
 		guidToPart21ContainerEClass = createEClass(GUID_TO_PART21_CONTAINER);
 		createEReference(guidToPart21ContainerEClass, GUID_TO_PART21_CONTAINER__GUID_TO_PART21);
@@ -622,7 +622,7 @@ public class Part21PackageImpl extends EPackageImpl implements Part21Package {
 
 		initEClass(guidToPart21MapEClass, Map.Entry.class, "GuidToPart21Map", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGuidToPart21Map_Key(), ecorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGuidToPart21Map_Value(), ecorePackage.getEIntegerObject(), "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGuidToPart21Map_Value(), ecorePackage.getEObject(), null, "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(guidToPart21ContainerEClass, GuidToPart21Container.class, "GuidToPart21Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGuidToPart21Container_GuidToPart21(), this.getGuidToPart21Map(), null, "guidToPart21", null, 0, -1, GuidToPart21Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

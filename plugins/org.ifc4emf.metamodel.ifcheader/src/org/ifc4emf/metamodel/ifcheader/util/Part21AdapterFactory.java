@@ -89,7 +89,7 @@ public class Part21AdapterFactory extends AdapterFactoryImpl {
 				return createModelSchemaAdapter();
 			}
 			@Override
-			public Adapter caseGuidToPart21Map(Map.Entry<String, Integer> object) {
+			public Adapter caseGuidToPart21Map(Map.Entry<String, EObject> object) {
 				return createGuidToPart21MapAdapter();
 			}
 			@Override
