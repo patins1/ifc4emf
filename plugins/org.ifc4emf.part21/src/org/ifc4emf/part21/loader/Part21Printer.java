@@ -92,7 +92,7 @@ public class Part21Printer {
 		this.helper = helper;
 		this.logger = Logger.getLogger("Loader"/* , "org.ifc4emf.metamodel.express.expressparser" */);
 		logger.setLevel(Level.INFO);
-		containmentHelper = Part21Loader.USE_CONTAINMENT_TREE && modelObject.getContentList().isEmpty() ? new ContainmentTreeOrderedByNumberHelper(modelObject) : new SimpleContainmentHelper(modelObject);
+		containmentHelper = Part21Loader.useContainmentTree() && modelObject.getContentList().isEmpty() ? new ContainmentTreeOrderedByNumberHelper(modelObject) : new SimpleContainmentHelper(modelObject);
 	}
 
 	public void save(OutputStream outputStream) throws IOException {
