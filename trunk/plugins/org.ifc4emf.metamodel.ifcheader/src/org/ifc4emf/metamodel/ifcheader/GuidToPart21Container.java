@@ -5,6 +5,7 @@ package org.ifc4emf.metamodel.ifcheader;
 import org.eclipse.emf.cdo.CDOObject;
 
 import org.eclipse.emf.common.util.EMap;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +28,7 @@ public interface GuidToPart21Container extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Guid To Part21</b></em>' map.
 	 * The key is of type {@link java.lang.String},
-	 * and the value is of type {@link java.lang.Integer},
+	 * and the value is of type {@link org.eclipse.emf.ecore.EObject},
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Guid To Part21</em>' map isn't clear,
@@ -36,9 +37,9 @@ public interface GuidToPart21Container extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Guid To Part21</em>' map.
 	 * @see org.ifc4emf.metamodel.ifcheader.Part21Package#getGuidToPart21Container_GuidToPart21()
-	 * @model mapType="org.ifc4emf.metamodel.ifcheader.GuidToPart21Map<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EIntegerObject>"
+	 * @model mapType="org.ifc4emf.metamodel.ifcheader.GuidToPart21Map<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EObject>"
 	 * @generated
 	 */
-	EMap<String, Integer> getGuidToPart21();
+	EMap<String, EObject> getGuidToPart21();
 
 } // GuidToPart21Container

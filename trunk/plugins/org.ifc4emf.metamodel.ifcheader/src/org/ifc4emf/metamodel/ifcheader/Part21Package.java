@@ -517,7 +517,7 @@ public interface Part21Package extends EPackage {
 	int GUID_TO_PART21_MAP__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -930,7 +930,7 @@ public interface Part21Package extends EPackage {
 	 * @return the meta object for class '<em>Guid To Part21 Map</em>'.
 	 * @see java.util.Map.Entry
 	 * @model keyDataType="org.eclipse.emf.ecore.EString"
-	 *        valueDataType="org.eclipse.emf.ecore.EIntegerObject"
+	 *        valueType="org.eclipse.emf.ecore.EObject" valueRequired="true"
 	 * @generated
 	 */
 	EClass getGuidToPart21Map();
@@ -947,15 +947,15 @@ public interface Part21Package extends EPackage {
 	EAttribute getGuidToPart21Map_Key();
 
 	/**
-	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @return the meta object for the reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getGuidToPart21Map()
 	 * @generated
 	 */
-	EAttribute getGuidToPart21Map_Value();
+	EReference getGuidToPart21Map_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.ifc4emf.metamodel.ifcheader.GuidToPart21Container <em>Guid To Part21 Container</em>}'.
@@ -1291,12 +1291,12 @@ public interface Part21Package extends EPackage {
 		EAttribute GUID_TO_PART21_MAP__KEY = eINSTANCE.getGuidToPart21Map_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUID_TO_PART21_MAP__VALUE = eINSTANCE.getGuidToPart21Map_Value();
+		EReference GUID_TO_PART21_MAP__VALUE = eINSTANCE.getGuidToPart21Map_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.ifc4emf.metamodel.ifcheader.impl.GuidToPart21ContainerImpl <em>Guid To Part21 Container</em>}' class.

@@ -100,7 +100,7 @@ public class Part21Switch<T> extends Switch<T> {
 				return result;
 			}
 			case Part21Package.GUID_TO_PART21_MAP: {
-				@SuppressWarnings("unchecked") Map.Entry<String, Integer> guidToPart21Map = (Map.Entry<String, Integer>)theEObject;
+				@SuppressWarnings("unchecked") Map.Entry<String, EObject> guidToPart21Map = (Map.Entry<String, EObject>)theEObject;
 				T result = caseGuidToPart21Map(guidToPart21Map);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -186,7 +186,7 @@ public class Part21Switch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGuidToPart21Map(Map.Entry<String, Integer> object) {
+	public T caseGuidToPart21Map(Map.Entry<String, EObject> object) {
 		return null;
 	}
 
