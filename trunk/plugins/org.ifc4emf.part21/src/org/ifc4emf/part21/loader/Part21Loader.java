@@ -760,6 +760,9 @@ public class Part21Loader implements ClearTextReaderVisitor {
 			if (!whiteListWithSupertypes.contains(ref.getEType()))
 				return;
 		}
+		if (skipReferences) {
+			throw new RuntimeException("As part21 references are prohibited, this class must be black-listed: " + ref.getEType().getName());
+		}
 		if (currentRef != ref) {
 			flushRefList(eobj);
 			currentRef = ref;
