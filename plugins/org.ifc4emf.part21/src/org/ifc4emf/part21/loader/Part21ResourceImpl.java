@@ -39,6 +39,7 @@ abstract public class Part21ResourceImpl extends ResourceImpl {
 	static public final String OPTION_CONTENTSLIST = EList.class.getName();
 	public static final String OPTION_SAVE_PROGRESS_MONITOR = IProgressMonitor.class.getName();
 	static public final String OPTION_MVD = "OPTION_MVD";
+	static public final String OPTION_SKIPREFERENCES = "OPTION_SKIPREFERENCES";
 
 	public Part21ResourceImpl() {
 		super();
@@ -82,6 +83,7 @@ abstract public class Part21ResourceImpl extends ResourceImpl {
 			Activator.log("IFC model size:" + inputStream.available());
 			loader = new Part21LoaderCDO(this, helper, inputStream, ifcModel, monitor);
 			loader.setMVD((Set<EClass>) options.get(OPTION_MVD));
+			loader.setSkipReferences((Boolean) options.get(OPTION_SKIPREFERENCES));
 		}
 		ClearTextReader parser = new ClearTextReader(inputStream);
 		parser.immediateConsumer = (ImmediateConsumer) loader;
