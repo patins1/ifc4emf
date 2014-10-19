@@ -263,6 +263,8 @@ public class Part21Loader implements ClearTextReaderVisitor {
 	private Set<EClass> whiteList;
 	private Set<EClass> whiteListWithSupertypes;
 
+	private boolean skipReferences;
+
 	public Part21Loader(Resource resource, Part21LoadHelper helper, Model ifcModel) {
 		super();
 		this.modelObject = ifcModel;
@@ -272,7 +274,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 		logger.setLevel(Level.WARNING);
 		// logger.addHandler(LOGHANDLER);
 		this.factory = helper.getFactory();
-		if (Part21Loader.useContainmentTree()) {
+		if (useContainmentTree()) {
 			this.containmentHelper = new ContainmentTreeOrderedByNumberHelper(modelObject);
 			this.forwardReferenceHelper = new BinaryTreeBasedForwardReferenceHelper((ContainmentTreeHelper) this.containmentHelper, helper);
 			// this.forwardReferenceHelper = new ComposedForwardReferenceHelper(new BinaryTreeBasedForwardReferenceHelper((ContainmentTreeHelper) this.containmentHelper));
@@ -1087,8 +1089,12 @@ public class Part21Loader implements ClearTextReaderVisitor {
 		}
 	}
 
-	public static final boolean useContainmentTree() {
-		return true;
+	public final boolean useContainmentTree() {
+		return !skipReferences;
+	}
+
+	public void setSkipReferences(Boolean b) {
+		skipReferences = b != null && b;
 	}
 
 }
