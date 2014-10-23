@@ -83,7 +83,6 @@ abstract public class Part21ResourceImpl extends ResourceImpl {
 			Activator.log("IFC model size:" + inputStream.available());
 			loader = new Part21LoaderCDO(this, helper, inputStream, ifcModel, monitor);
 			loader.setMVD((Set<EClass>) options.get(OPTION_MVD));
-			loader.setSkipReferences((Boolean) options.get(OPTION_SKIPREFERENCES));
 		}
 		ClearTextReader parser = new ClearTextReader(inputStream);
 		parser.immediateConsumer = (ImmediateConsumer) loader;

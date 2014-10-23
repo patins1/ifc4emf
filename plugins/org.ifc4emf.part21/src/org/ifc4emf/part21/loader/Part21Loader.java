@@ -273,6 +273,7 @@ public class Part21Loader implements ClearTextReaderVisitor {
 		this.logger = Logger.getLogger("Loader"/* , "org.ifc4emf.metamodel.express.expressparser" */);
 		logger.setLevel(Level.WARNING);
 		// logger.addHandler(LOGHANDLER);
+		skipReferences = Boolean.TRUE.equals(resource.getResourceSet().getLoadOptions().get(Part21ResourceImpl.OPTION_SKIPREFERENCES));
 		this.factory = helper.getFactory();
 		if (useContainmentTree()) {
 			this.containmentHelper = new ContainmentTreeOrderedByNumberHelper(modelObject);
@@ -1094,10 +1095,6 @@ public class Part21Loader implements ClearTextReaderVisitor {
 
 	public final boolean useContainmentTree() {
 		return !skipReferences;
-	}
-
-	public void setSkipReferences(Boolean b) {
-		skipReferences = b != null && b;
 	}
 
 }
